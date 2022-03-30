@@ -29,17 +29,14 @@
 
 {% include 'partials/menu.html' %}
 
-<div class="col-8 m-auto pt-2 pb-2 text-center">
-    <h1>Novo Post</h1>
+<div class="row">
+    <a href="/" class="btn btn-info text-wrap m-auto">Voltar</a>
+    <div class="col-8 pl-1 pr-5 pt-2 pb-2">
+        <h1>Novo Post</h1>
+    </div>
 </div>
 
-<div class="row align: left">
-<div class="col-8 m-auto pt-3 pb-2" style="width: 10rem;">
-    <a href="/" class="btn btn-info text-wrap">Voltar</a>
-</div>
-</div>
-
-<div class="container" align="left">
+<div class="container col-8" align="left">
     <div class="col-8 m-auto pt-2 pb-2">
         <form action="create" method="POST">
             {% csrf_token %}

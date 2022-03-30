@@ -28,15 +28,16 @@
 
 {% include 'partials/menu.html' %}
 
+<div class="row">
+  <a href="/" class="btn btn-info text-wrap m-auto">Voltar</a>
 <div class="col-8 m-auto pt-2 pb-2 text-center">
     <h1>Novo Post</h1>
 </div>
-
-<div class="col-8 m-auto pt-3 pb-2 text-center" style="width: 10rem;">
-    <a href="/" class="btn btn-info text-wrap">Voltar</a>
 </div>
 
-<div class="container" align="left">
+
+
+<div class="container col-8" align="left">
     <div class="col-8 m-auto pt-2 pb-2">
         <form action="" method="POST">
             {% csrf_token %}
