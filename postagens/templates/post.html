@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Preloader -->
+<div id="preloader">
+    <i class="circle-preloader"></i>
+    <img src="{% static 'img/icone.ico' %}" alt="">
+</div>
+
+<!-- Search Wrapper -->
+<div class="search-wrapper">
+    <!-- Close Btn -->
+    <div class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form method="GET">
+                    <input type="search" name="search" placeholder="O que está procurando...">
+                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'partials/menu.html' %}
+
+<div class="col-8 m-auto pt-2 pb-2 text-center">
+    <h1>Meu Post</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-10 m-auto pt-2 pb-2 text-center">
+            <a href="/" class="btn btn-info text-wrap">Voltar</a>
+            {% if post %}
+            <a href="{% url 'delete_post' post.id %}" class="btn btn-info text-wrap " style="float: center;">Deletar</a>
+            <a href="{% url 'update_post' post.id %}" class="btn btn-info text-wrap " style="float: center;">Editar</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- ##### Best Receipe Area Start ##### -->
+<section class="best-receipe-area">
+    <div class="container">
+        <div class="row">
+            <div class="card mx-auto" style="max-width: 600px; min-width: 300px">
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.postagem_titulo }}</h5>
+                    <p class="card-text">{{ post.postagem_texto }}</p>
+                </div>
+                <div class="card-footer" style="text-align: right">
+                    Publicado em {{ post.data_postagem|date:'d/m/Y' }} por {{ post.author }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ##### Best Receipe Area End ##### -->
+
+{% include 'partials/footer.html' %}
+{% endblock %}
