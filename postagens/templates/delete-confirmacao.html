@@ -27,7 +27,7 @@
 
 {% include 'partials/menu.html' %}
 
-<div class="col-8 m-auto pt-2 pb-2 text-center">
+<div class="col-8 m-auto pt-0 pb-0 text-center">
     <h1>Deletar</h1>
 </div>
 
@@ -35,11 +35,11 @@
     <a href="/" class="btn btn-info text-wrap">Voltar</a>
 </div>
 
-<div class="container" align="left">
+<div class="container mb-5" align="left">
     <div class="col-8 m-auto pt-2 pb-2">
         <form method="POST">
             {% csrf_token %}
-            <h2>Deseja excluir o Post <strong>{{ post.postagem_titulo}}</strong></h2>
+            <h2>Deseja excluir o Post: <strong>{{ post.postagem_titulo}}</strong></h2>
             <input type="submit" class="btn btn-success" value="Confirma">
         </form>
     </div>
