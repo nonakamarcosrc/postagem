@@ -52,7 +52,8 @@ def delete_post(request, id):
 #     if request.method == 'GET': # this will be GET now
 #         post_name =  request.GET.get('search') # do some research what it does
 #         try:
-#             status = Post.objects.filter(postagem_titulo__icontains=post_name) # filter returns a list so you might consider skip except part
+            # filter retorna uma lista
+#             status = Post.objects.filter(postagem_titulo__icontains=post_name)
 #         return render(request,"index.html",{"post":status})
 #     else:
 #         return render(request,"index.html",{})

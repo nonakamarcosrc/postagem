@@ -12,7 +12,7 @@
 
     // :: 2.0 Newsticker Active Code
     $.simpleTicker($("#breakingNewsTicker"), {
-        speed: 2900,
+        speed: 3600,
         delay: 2900,
         easing: 'swing',
         effectType: 'roll'
