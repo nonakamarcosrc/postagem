@@ -16,6 +16,7 @@ class Post(models.Model):
     # Converter em letra maiúscula do campo postagem_titulo
     def save(self, force_insert=False, force_update=False):
         self.postagem_texto = self.postagem_texto.upper()
+        self.postagem_titulo = self.postagem_titulo.upper()
         super(Post, self).save(force_insert, force_update)
 
     # Melhorando visualização da lista de nome do post do admin
